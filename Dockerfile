@@ -1,5 +1,7 @@
 FROM teddysun/xray
+
 ENV TZ=Asia/Colombo
-ADD entrypoint.sh /
-RUN chmod +x /entrypoint.sh
-CMD /entrypoint.sh
+
+COPY . /app
+RUN chmod +x /app/entrypoint.sh
+CMD ["/app/entrypoint.sh"
